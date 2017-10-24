@@ -40,14 +40,13 @@ class Text implements SaveEvent
 				":created_at"	=> date("Y-m-d H:i:s")
 			];
 
-		$query2 = 
 		for ($i=0; $i < 300; $i++) { 
 			$query .= "(:msg_uniq{$i}, :user_id, :group_id, :message_id, :reply_to_message_id, :type, :created_at),";
 			$data[":msg_uniq{$i}"] = $i.($uniq = $this->b->msgid."|".$this->b->chat_id);
 			$query2 .= "(:msg_uniq{$i}, :txt, NULL),";
 			$data2[":msg_uniq{$i}"] = $i.$uniq;
 		}
-		$data2[":txt"] = $this->b->text
+		$data2[":txt"] = $this->b->text;
 		$st = DB::prepare(rtrim($query, ","));
 		pc($st->execute($data), $st);
 
