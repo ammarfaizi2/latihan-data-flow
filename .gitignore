@@ -1,0 +1,7 @@
+/logs/*
+/.phpintel/
+/vendor/
+/config.php
+/old/
+/public/.well-known
+/public/virtual

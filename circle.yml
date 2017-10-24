@@ -1,0 +1,20 @@
+
+machine:
+  pre:
+    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
+  timezone: 
+    Asia/Jakarta
+  php:
+    version: 7.1.0
+
+dependencies: 
+  pre:
+    - cp config.php.example config.php
+  override: 
+    - composer install --prefer-source --no-interaction -vvv
+
+test:
+  post: 
+    - phpunit
+    - php build
+    - php tests/manual/circle.php

@@ -1,0 +1,23 @@
+{
+    "authors": [
+        {
+            "name": "Ammar Faizi",
+            "email": "ammarfaizi2@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"psr-0": {
+            "Exceptions": "src/",
+            "Contracts": "src/",
+            "Plugins": "src/",
+            "System": "src/",
+            "Lang": "src/",
+            "Bot": "src/",
+            "": "src/"
+    	},
+        "files": [
+            "config.php"
+        ]
+    }
+}
